@@ -7,6 +7,9 @@ import { HeaderComponent } from './components/header/header.component';
 import { NavComponent } from './components/nav/nav.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { MenuComponent } from './components/menu/menu.component';
+import {HttpClient, HttpClientModule} from "@angular/common/http";
+import { ItemMenuComponent } from './components/item-menu/item-menu.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -15,10 +18,13 @@ import { MenuComponent } from './components/menu/menu.component';
     HeaderComponent,
     NavComponent,
     CarouselComponent,
-    MenuComponent
+    MenuComponent,
+    ItemMenuComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
