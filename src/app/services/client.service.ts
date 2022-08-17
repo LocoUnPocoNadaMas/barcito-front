@@ -7,7 +7,7 @@ import {IProduct} from "../components/menu/IProduct";
   providedIn: 'root'
 })
 export class ClientService {
-  private online: string = "https://bar-back-spring-app-20220815215921.azuremicroservices.io/";
+  private online: string = "https://bar-back-spring-app-20220816233635.azuremicroservices.io/";
   private local: string ="http://127.0.0.1/";
 
   constructor(private httpClient: HttpClient) { }
