@@ -1,0 +1,16 @@
+#cart {
+  color: saddlebrown;
+  accent-color: red;
+  caret-color: darkred;
+  flood-color: #0d6efd;
+  solid-color: #3dd5f3;
+  text-emphasis-color: #0d6efd;
+  lighting-color: #0f5132;
+  --bs-body-color: red;
+  --bs-body-color-rgb: #0d6efd;
+
+}
+
+a.nav-link:hover, a.nav-link:focus, a.nav-link:active {
+  background-color: #333;
+}

@@ -13,11 +13,18 @@ export class MenuComponent implements OnInit {
 
   constructor(private clientService: ClientService) {}
 
+  protected a: boolean = false;
+
   ngOnInit(): void {
+    this.a=this.comprobacion();
+  }
+
+  comprobacion(): boolean{
     this.clientService.getMenu().subscribe( data =>{
       this.products = data;
-      console.log(this.products);
+      return true
     });
+    return false;
   }
 
   addProduct(product: IProduct) {
