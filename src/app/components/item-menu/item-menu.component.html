@@ -3,7 +3,10 @@
     <tr>
       <th class="h3">{{product.name}}</th>
       <th class="h2">${{product.pvalue}}
-        <fa-icon class="icon" [icon]="addIcon"></fa-icon>
+        <fa-icon class="icon"
+          [icon]="addIcon"
+          (click)="onAdd(product)"
+        ></fa-icon>
       </th>
     </tr>
   </thead>

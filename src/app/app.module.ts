@@ -10,6 +10,7 @@ import { MenuComponent } from './components/menu/menu.component';
 import {HttpClient, HttpClientModule} from "@angular/common/http";
 import { ItemMenuComponent } from './components/item-menu/item-menu.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { AboutComponent } from './components/about/about.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     NavComponent,
     CarouselComponent,
     MenuComponent,
-    ItemMenuComponent
+    ItemMenuComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,

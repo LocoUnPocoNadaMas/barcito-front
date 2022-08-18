@@ -1,0 +1,18 @@
+.nav-link{
+  alignment: right;
+  text-align: right;
+  margin-left: 50%;
+  margin-right: auto;
+}
+
+.nav-item{
+  alignment: right;
+  margin-left: 50%;
+  margin-right: auto;
+}
+
+.navbar-nav mx-auto{
+  alignment: right;
+  margin-left: 50%;
+  margin-right: auto;
+}

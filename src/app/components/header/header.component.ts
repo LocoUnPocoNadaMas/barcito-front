@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
+import {Component, OnInit} from '@angular/core';
+import {faCartShopping} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-header',
@@ -8,11 +8,14 @@ import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 })
 export class HeaderComponent implements OnInit {
 
-  buyIcon= faCartShopping;
+  buyIcon = faCartShopping;
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  onBuy(){
+    console.info("comprado")
+  }
 }

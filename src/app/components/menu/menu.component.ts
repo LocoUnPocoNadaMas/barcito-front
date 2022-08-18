@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {ClientService} from "../../services/client.service";
-import {IProduct} from "./IProduct";
+import {IProduct} from "../../model/IProduct";
 
 @Component({
   selector: 'app-menu',
@@ -11,23 +11,20 @@ export class MenuComponent implements OnInit {
 
   products: IProduct[] = [];
 
+  orders: IProduct[] = [];
+
+  @Output() onAddOrder: EventEmitter<IProduct> = new EventEmitter<IProduct>();
+
   constructor(private clientService: ClientService) {}
 
-  protected a: boolean = false;
-
   ngOnInit(): void {
-    this.a=this.comprobacion();
-  }
-
-  comprobacion(): boolean{
     this.clientService.getMenu().subscribe( data =>{
-      this.products = data;
-      return true
+      this.products = data
     });
-    return false;
   }
 
-  addProduct(product: IProduct) {
-
+  addProduct(order: IProduct) {
+    //this.onAddOrder.emit(order);
+    //console.info("b"+order);
   }
 }

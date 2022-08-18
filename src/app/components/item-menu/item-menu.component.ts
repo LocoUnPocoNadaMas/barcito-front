@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {IProduct} from "../menu/IProduct";
+import {IProduct} from "../../model/IProduct";
 
 import { faPlusCircle } from '@fortawesome/free-solid-svg-icons';
 
@@ -11,15 +11,29 @@ import { faPlusCircle } from '@fortawesome/free-solid-svg-icons';
 export class ItemMenuComponent implements OnInit {
 
   addIcon = faPlusCircle;
+
   @Input() product: IProduct = {name:"",description:"",pvalue:0};
+  //@Input() product: IProduct = [];
+  //@Input() product: IProduct[] = [];
   @Output() onAddProduct: EventEmitter<IProduct> = new EventEmitter<IProduct>();
+
+  private order: IProduct[] = [];
+  private count: number = 0;
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  onAdd(product: IProduct){
-    this.onAddProduct.emit(product);
+  /**
+   * emite al padre
+   * @param product
+   */
+  onAdd(p: IProduct){
+    this.order.push(p);
+    for (var orderElement of this.order) {
+      console.log(orderElement);
+    }
   }
 
 }
