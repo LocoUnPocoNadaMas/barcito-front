@@ -11,10 +11,6 @@ export class MenuComponent implements OnInit {
 
   products: IProduct[] = [];
 
-  orders: IProduct[] = [];
-
-  @Output() onAddOrder: EventEmitter<IProduct> = new EventEmitter<IProduct>();
-
   constructor(private clientService: ClientService) {}
 
   ngOnInit(): void {
@@ -23,8 +19,12 @@ export class MenuComponent implements OnInit {
     });
   }
 
-  addProduct(order: IProduct) {
-    //this.onAddOrder.emit(order);
-    //console.info("b"+order);
+  orders: IProduct[] = [];
+
+  addProduct(product: IProduct) {
+    this.orders.push(product);
+    for (const p of this.orders) {
+      console.log(p);
+    }
   }
 }

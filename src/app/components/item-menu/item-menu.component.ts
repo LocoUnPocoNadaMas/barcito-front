@@ -12,13 +12,8 @@ export class ItemMenuComponent implements OnInit {
 
   addIcon = faPlusCircle;
 
-  @Input() product: IProduct = {name:"",description:"",pvalue:0};
-  //@Input() product: IProduct = [];
-  //@Input() product: IProduct[] = [];
+  @Input() item: IProduct = {name:"",description:"",pvalue:0};
   @Output() onAddProduct: EventEmitter<IProduct> = new EventEmitter<IProduct>();
-
-  private order: IProduct[] = [];
-  private count: number = 0;
 
   constructor() { }
 
@@ -29,11 +24,8 @@ export class ItemMenuComponent implements OnInit {
    * emite al padre
    * @param product
    */
-  onAdd(p: IProduct){
-    this.order.push(p);
-    for (var orderElement of this.order) {
-      console.log(orderElement);
-    }
+  onAdd(product: IProduct) {
+    this.onAddProduct.emit(product);
   }
 
 }
