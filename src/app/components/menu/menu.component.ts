@@ -1,4 +1,4 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {ClientService} from "../../services/client.service";
 import {IProduct} from "../../model/IProduct";
 
@@ -11,6 +11,10 @@ export class MenuComponent implements OnInit {
 
   products: IProduct[] = [];
 
+  @Output() onCartChange = new EventEmitter<void>();
+  @Input() orders: IProduct[] = [];
+  @Output() ordersChange = new EventEmitter<IProduct[]>();
+
   constructor(private clientService: ClientService) {}
 
   ngOnInit(): void {
@@ -19,12 +23,12 @@ export class MenuComponent implements OnInit {
     });
   }
 
-  orders: IProduct[] = [];
-
   addProduct(product: IProduct) {
     this.orders.push(product);
-    for (const p of this.orders) {
-      console.log(p);
-    }
+  }
+
+  onOrder() {
+    this.onCartChange.emit();
+    this.ordersChange.emit(this.orders);
   }
 }

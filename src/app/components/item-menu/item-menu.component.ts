@@ -6,7 +6,7 @@ import { faPlusCircle } from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-item-menu',
   templateUrl: './item-menu.component.html',
-  styleUrls: ['./item-menu.component.css']
+  styleUrls: ['./item-menu.component.css'],
 })
 export class ItemMenuComponent implements OnInit {
 
@@ -15,7 +15,8 @@ export class ItemMenuComponent implements OnInit {
   @Input() item: IProduct = {name:"",description:"",pvalue:0};
   @Output() onAddProduct: EventEmitter<IProduct> = new EventEmitter<IProduct>();
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
   }
@@ -25,6 +26,7 @@ export class ItemMenuComponent implements OnInit {
    * @param product
    */
   onAdd(product: IProduct) {
+    //this.binding. (product)
     this.onAddProduct.emit(product);
   }
 

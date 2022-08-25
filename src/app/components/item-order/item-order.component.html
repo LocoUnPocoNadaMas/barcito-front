@@ -1,0 +1,13 @@
+<table class="product-item">
+  <thead>
+  <tr>
+    <th class="h3">{{item.name}}</th>
+    <th class="h2">${{item.pvalue}}
+      <fa-icon class="icon"
+               [icon]="removeIcon"
+               (click)="onRemove(item)"
+      ></fa-icon>
+    </th>
+  </tr>
+  </thead>
+</table>

@@ -1,0 +1,22 @@
+.product-item{
+  width: 100%;
+  background-color: #f4f4f4;
+  margin: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.h2{ text-align: right; }
+
+.h3{ text-align: left; }
+
+.p{ text-align: left; }
+
+.icon{ color: saddlebrown; }
+
+.product-item.selected{ border-left: 5px solid green; }
+
+.uwu{
+  color: rgb(255,255,255);
+  text-decoration: none
+}

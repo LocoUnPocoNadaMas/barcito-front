@@ -1,0 +1,31 @@
+<section class="page-section cta" id="main">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-9 mx-auto">
+        <div class="text-center cta-inner rounded">
+
+          <ng-container *ngIf="products.length>0; else horarios">
+            <div *ngIf="!cart; else orden">
+              <!-- MENU -->
+              <app-menu
+                (onCartChange)="cartChange()"
+                [(orders)]="orders"
+              ></app-menu>
+            </div>
+            <ng-template #orden>
+              <!-- ORDER -->
+              <app-order
+                (onCartChange)="cartChange()"
+                [(orders)]="orders"
+              ></app-order>
+            </ng-template>
+          </ng-container>
+          <ng-template #horarios>
+            <!-- HOURS -->
+            <app-hours></app-hours>
+          </ng-template>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -11,6 +11,10 @@ import {HttpClient, HttpClientModule} from "@angular/common/http";
 import { ItemMenuComponent } from './components/item-menu/item-menu.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AboutComponent } from './components/about/about.component';
+import { MainComponent } from './components/main/main.component';
+import { OrderComponent } from './components/order/order.component';
+import { HoursComponent } from './components/hours/hours.component';
+import { ItemOrderComponent } from './components/item-order/item-order.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +25,11 @@ import { AboutComponent } from './components/about/about.component';
     CarouselComponent,
     MenuComponent,
     ItemMenuComponent,
-    AboutComponent
+    AboutComponent,
+    MainComponent,
+    OrderComponent,
+    HoursComponent,
+    ItemOrderComponent
   ],
   imports: [
     BrowserModule,

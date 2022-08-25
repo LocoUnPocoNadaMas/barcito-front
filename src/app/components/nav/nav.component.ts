@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
+import {IProduct} from "../../model/IProduct";
 
 @Component({
   selector: 'app-nav',
@@ -15,4 +16,6 @@ export class NavComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onBuy() {
+  }
 }
