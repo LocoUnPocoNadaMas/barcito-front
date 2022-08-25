@@ -12,7 +12,7 @@ export class ItemMenuComponent implements OnInit {
 
   addIcon = faPlusCircle;
 
-  @Input() item: IProduct = {name:"",description:"",pvalue:0};
+  @Input() item!: IProduct;
   @Output() onAddProduct: EventEmitter<IProduct> = new EventEmitter<IProduct>();
 
   constructor() {

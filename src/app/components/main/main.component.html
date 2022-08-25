@@ -8,15 +8,16 @@
             <div *ngIf="!cart; else orden">
               <!-- MENU -->
               <app-menu
-                (onCartChange)="cartChange()"
+                (onCartChange)="cartChange(true)"
                 [(orders)]="orders"
               ></app-menu>
             </div>
             <ng-template #orden>
               <!-- ORDER -->
               <app-order
-                (onCartChange)="cartChange()"
+                (onCartChange)="cartChange(false)"
                 [(orders)]="orders"
+                (onConfirm)="confirmOrder()"
               ></app-order>
             </ng-template>
           </ng-container>

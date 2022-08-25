@@ -9,9 +9,9 @@ import {IProduct} from "../../model/IProduct";
 })
 export class MenuComponent implements OnInit {
 
-  products: IProduct[] = [];
+  protected products: IProduct[] = [];
 
-  @Output() onCartChange = new EventEmitter<void>();
+  @Output() onCartChange = new EventEmitter<boolean>();
   @Input() orders: IProduct[] = [];
   @Output() ordersChange = new EventEmitter<IProduct[]>();
 
@@ -28,7 +28,7 @@ export class MenuComponent implements OnInit {
   }
 
   onOrder() {
-    this.onCartChange.emit();
+    this.onCartChange.emit(true);
     this.ordersChange.emit(this.orders);
   }
 }

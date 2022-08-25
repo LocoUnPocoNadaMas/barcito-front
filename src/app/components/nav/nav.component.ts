@@ -9,7 +9,7 @@ import {IProduct} from "../../model/IProduct";
 })
 export class NavComponent implements OnInit {
 
-  buyIcon= faCartShopping;
+  protected buyIcon= faCartShopping;
 
   constructor() { }
 

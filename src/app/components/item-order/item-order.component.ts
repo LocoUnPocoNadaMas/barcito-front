@@ -12,7 +12,7 @@ export class ItemOrderComponent implements OnInit {
   @Input() item!: IProduct;
   @Output() onRemoveItem: EventEmitter<IProduct> = new EventEmitter<IProduct>();
 
-  removeIcon = faMinusCircle;
+  protected removeIcon = faMinusCircle;
 
   constructor() { }
 

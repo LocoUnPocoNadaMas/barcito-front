@@ -8,43 +8,40 @@ import {IProduct} from "../../model/IProduct";
 })
 export class OrderComponent implements OnInit {
 
-  @Output() onCartChange = new EventEmitter<void>();
+  @Output() onCartChange = new EventEmitter<boolean>();
 
   @Input() orders: IProduct[] = [];
   @Output() ordersChange = new EventEmitter<IProduct[]>();
 
-  protected value:number = 0;
+  @Output() onConfirm = new EventEmitter<void>();
+
+  protected price: number = 0;
 
   constructor() { }
 
   ngOnInit(): void {
     for (let p of this.orders) {
       console.log(p);
-      this.value+=p.pvalue;
+      this.price+=p.pvalue;
     }
   }
 
-  addOrder(orders: IProduct[]) {
-    //this.orders.push(product);
-  }
-
   removeItem(order: IProduct) {
-    this.value=0;
+    this.price=0;
     const filteredLibraries = this.orders.filter((item)=> item !== order);
     this.orders = filteredLibraries;
     for (let p of this.orders) {
-      console.log(p);
-      this.value+=p.pvalue;
+      this.price+=p.pvalue;
     }
 
     this.ordersChange.emit(this.orders);
   }
 
   onGoBack() {
-    this.onCartChange.emit();
+    this.onCartChange.emit(false);
   }
 
-  onConfirm() {
-
+  onConfirmOrder() {
+    this.onConfirm.emit();
   }
 }

@@ -1,6 +1,7 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {IProduct} from "../../model/IProduct";
 import {ClientService} from "../../services/client.service";
+import {IOrder} from "../../model/IOrder";
 
 @Component({
   selector: 'app-main',
@@ -9,9 +10,10 @@ import {ClientService} from "../../services/client.service";
 })
 export class MainComponent implements OnInit {
 
-  products: IProduct[] = [];
-  orders: IProduct[] = [];
-  cart: boolean = false;
+  protected products: IProduct[] = [];
+  protected orders: IProduct[] = [];
+  protected cart: boolean = false;
+  //private item: IOrder = {prod_id: 0, client_id: 0};
 
 
   constructor(private clientService: ClientService) {
@@ -23,7 +25,19 @@ export class MainComponent implements OnInit {
     });
   }
 
-  cartChange() {
-    this.cart=!this.cart;
+  cartChange(value: boolean) {
+    this.cart=value;
+  }
+
+  confirmOrder() {
+    let order: IOrder = {prod_id: 0, client_id: 0};
+    for (const o of this.orders) {
+      //console.log(o)
+      order.prod_id = o.prodID;
+      order.client_id=1;
+      //console.log(item)
+      this.clientService.postOrder(order).subscribe();
+    }
+
   }
 }

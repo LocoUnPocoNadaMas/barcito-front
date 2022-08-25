@@ -4,10 +4,16 @@ import {catchError, Observable, retry, throwError} from "rxjs";
 import {IProduct} from "../model/IProduct";
 import {IOrder} from "../model/IOrder";
 
-const httpOptions = {
+/*const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type':  'application/json',
     Authorization: 'my-auth-token'
+  })
+};*/
+
+const httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type':  'application/json'
   })
 };
 
@@ -41,12 +47,14 @@ export class ClientService {
     );
   }
 
-  /*postOrder(order: IOrder): Observable<IOrder> {
+  postOrder(order: IOrder): Observable<IOrder> {
     //const url = `${this.apiUrl}/${agregar}`; //obviamente esta mal
 
-    return this.httpClient.post<IOrder>(this.apiUrl, order, httpOptions)
+    return this.httpClient.post<IOrder>(this.apiUrl+"agregar", order, httpOptions)
+    //return this.httpClient.post<IOrder>(this.apiUrl+"agregar", order)
       .pipe(
-        catchError(this.handleError('postOrder', order))
+        //catchError(this.handleError('postOrder', order))
+        catchError(this.handleError)
       );
-  }*/
+  }
 }
