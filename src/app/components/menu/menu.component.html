@@ -3,11 +3,10 @@
   <span class="section-heading-lower">We're Open</span>
 </h2>
 <!-- BUTTON -->
-<!-- QUITAR ORDER = ORDERS -->
 <app-nav *ngIf="orders.length>0"
          (click)="onOrder()"
 ></app-nav>
-<!-- ITEMS -->
+<!-- ITEM LIST -->
 <app-item-menu
   *ngFor="let product of products"
   [item]="product"

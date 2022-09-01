@@ -27,10 +27,13 @@
       ><a class="uwu" href="#main">Go Back</a></button>
     </td>
     <td>
-      <button
-        class="btn-success"
-        (click)="onConfirmOrder()"
-      >Confirm</button>
+      <ng-container *ngIf="orders.length>0">
+        <button
+          class="btn-success"
+          (click)="onConfirmOrder()"
+        >Confirm</button>
+      </ng-container>
+
     </td>
   </tr>
   </tbody>

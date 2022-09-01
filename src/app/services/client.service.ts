@@ -21,8 +21,8 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class ClientService {
-  //private apiUrl: string = "https://bar-back-spring-app-20220816233635.azuremicroservices.io/";
-  private apiUrl: string ="http://127.0.0.1/";
+  private apiUrl: string = "https://bar-back-spring-app-20220825161906.azuremicroservices.io/";
+  //private apiUrl: string ="http://127.0.0.1/";
 
   private handleError(error: HttpErrorResponse) {
     if (error.status === 0) {

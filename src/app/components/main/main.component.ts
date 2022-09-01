@@ -34,10 +34,12 @@ export class MainComponent implements OnInit {
     for (const o of this.orders) {
       //console.log(o)
       order.prod_id = o.prodID;
-      order.client_id=1;
-      //console.log(item)
+      order.client_id = 1;
       this.clientService.postOrder(order).subscribe();
+      const filteredLibraries = this.orders.filter((item) => item !== o);
+      this.orders = filteredLibraries;
     }
-
+    this.cart = false;
+    window.confirm("Pedido realizado con éxito");
   }
 }
